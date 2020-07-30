@@ -1,0 +1,9 @@
+require 'hanami/validations'
+
+class <%= validator.classify %>Validator
+  include Hanami::Validations
+
+  validations do
+    #required(:name) { filled? & str? & size?(3..64) }
+  end
+end
