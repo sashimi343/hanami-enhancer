@@ -10,8 +10,8 @@ module Hanami
 
         desc 'Generate an interactor'
 
-        argument :domain_name, desc: 'Domain for a new interaction'
-        argument :interaction_name, desc: 'Name of new interaction'
+        argument :domain_name, required: true, desc: 'Domain for a new interaction'
+        argument :interaction_name, required: true, desc: 'Name of new interaction'
 
         example [
           'user register # Will generate UserInteractor::Register and its spec file'
