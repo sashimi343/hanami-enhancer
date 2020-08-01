@@ -1,4 +1,5 @@
 require 'hanami/enhancer/generator'
+require 'hanami/enhancer/destroyer'
 require 'hanami/enhancer/version'
 
 module Hanami
