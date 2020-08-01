@@ -1,12 +1,12 @@
 require 'hanami/cli/commands'
 require 'hanami/cli/commands/command'
-require 'hanami/enhancer/generator_util'
+require 'hanami/enhancer/generator/util'
 
 module Hanami
   module Enhancer
-    module Validator
-      class CLI < Hanami::CLI::Commands::Command
-        include Hanami::Enhancer::GeneratorUtil
+    module Generator
+      class Validator < Hanami::CLI::Commands::Command
+        include Hanami::Enhancer::Generator::Util
 
         desc 'Generate an validator'
 
@@ -44,5 +44,5 @@ module Hanami
 end
 
 Hanami::CLI.register 'generate', aliases: ['g'] do |prefix|
-  prefix.register 'validator', Hanami::Enhancer::Validator::CLI
+  prefix.register 'validator', Hanami::Enhancer::Generator::Validator
 end

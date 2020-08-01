@@ -1,12 +1,12 @@
 require 'hanami/cli/commands'
 require 'hanami/cli/commands/command'
-require 'hanami/enhancer/generator_util'
+require 'hanami/enhancer/generator/util'
 
 module Hanami
   module Enhancer
-    module Interactor
-      class CLI < Hanami::CLI::Commands::Command
-        include Hanami::Enhancer::GeneratorUtil
+    module Generator
+      class Interactor < Hanami::CLI::Commands::Command
+        include Hanami::Enhancer::Generator::Util
 
         desc 'Generate an interactor'
 
@@ -45,5 +45,5 @@ module Hanami
 end
 
 Hanami::CLI.register 'generate', aliases: ['g'] do |prefix|
-  prefix.register 'interactor', Hanami::Enhancer::Interactor::CLI
+  prefix.register 'interactor', Hanami::Enhancer::Generator::Interactor
 end
