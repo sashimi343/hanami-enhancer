@@ -18,7 +18,7 @@ module Hanami
         def generate_file(destination, source, context)
           Dry::CLI::Utils::Files::write(
             destination,
-            render(source, context)
+            ERB.new(File.read(source)).result(context)
           )
 
           say(:create, destination)
@@ -32,6 +32,15 @@ module Hanami
           camelize(str).gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
             .gsub(/([a-z\d])([A-Z])/, '\1_\2')
             .downcase
+        end
+
+        def say(message_type, message)
+          case message_type
+          when :create
+            puts "      create  #{message}"
+          when :delete
+            puts "      delete  #{message}"
+          end
         end
       end
     end

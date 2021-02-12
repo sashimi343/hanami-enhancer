@@ -5,7 +5,7 @@ require 'hanami/enhancer/generator/util'
 module Hanami
   module Enhancer
     module Generator
-      class Validator < Hanami::CLI::Commands::Command
+      class Validator < Hanami::CLI::Command
         include Hanami::Enhancer::Generator::Util
 
         desc 'Generate an validator'
@@ -17,10 +17,8 @@ module Hanami
         ]
 
         def call(validator:, **options)
-          context = Hanami::CLI::Commands::Context.new(validator: validator)
-
-          generate_validator(context, validator)
-          generate_validator_spec(context, validator)
+          generate_validator(binding, validator)
+          generate_validator_spec(binding, validator)
         end
 
         private

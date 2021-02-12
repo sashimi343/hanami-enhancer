@@ -1,6 +1,6 @@
 require 'hanami/validations'
 
-class <%= validator.classify %>Validator
+class <%= camelize(validator) %>Validator
   include Hanami::Validations
 
   validations do

@@ -5,7 +5,7 @@ require 'hanami/enhancer/generator/util'
 module Hanami
   module Enhancer
     module Generator
-      class Interactor < Hanami::CLI::Commands::Command
+      class Interactor < Hanami::CLI::Command
         include Hanami::Enhancer::Generator::Util
 
         desc 'Generate an interactor'
@@ -18,10 +18,8 @@ module Hanami
         ]
 
         def call(domain_name:, interaction_name:, **options)
-          context = Hanami::CLI::Commands::Context.new(domain: domain_name, interaction: interaction_name)
-
-          generate_interactor(context, domain_name, interaction_name)
-          generate_interactor_spec(context, domain_name, interaction_name)
+          generate_interactor(binding, domain_name, interaction_name)
+          generate_interactor_spec(binding, domain_name, interaction_name)
         end
 
         private

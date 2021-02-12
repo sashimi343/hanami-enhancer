@@ -5,7 +5,7 @@ require 'hanami/enhancer/destroyer/util'
 module Hanami
   module Enhancer
     module Destroyer
-      class Validator < Hanami::CLI::Commands::Command
+      class Validator < Hanami::CLI::Command
         include Hanami::Enhancer::Destroyer::Util
 
         desc 'Destroy an validator'

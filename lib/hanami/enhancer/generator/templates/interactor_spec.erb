@@ -1,5 +1,5 @@
 require_relative '../../../spec_helper.rb'
 
-RSpec.describe <%= domain.classify %>Interactor::<%= interaction.classify %> do
+RSpec.describe <%= camelize(domain_name) %>Interactor::<%= camelize(interaction_name) %> do
   # your code goes here
 end

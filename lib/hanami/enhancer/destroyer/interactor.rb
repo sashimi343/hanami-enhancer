@@ -5,7 +5,7 @@ require 'hanami/enhancer/destroyer/util'
 module Hanami
   module Enhancer
     module Destroyer
-      class Interactor < Hanami::CLI::Commands::Command
+      class Interactor < Hanami::CLI::Command
         include Hanami::Enhancer::Destroyer::Util
 
         desc 'Destroy an interactor'

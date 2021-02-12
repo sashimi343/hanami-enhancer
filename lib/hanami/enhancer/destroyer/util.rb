@@ -25,6 +25,15 @@ module Hanami
             .gsub(/([a-z\d])([A-Z])/, '\1_\2')
             .downcase
         end
+
+        def say(message_type, message)
+          case message_type
+          when :create
+            puts "      create  #{message}"
+          when :delete
+            puts "      delete  #{message}"
+          end
+        end
       end
     end
   end

@@ -1,7 +1,7 @@
 require 'hanami/interactor'
 
-module <%= domain.classify %>Interactor
-  class <%= interaction.classify %>
+module <%= camelize(domain_name) %>Interactor
+  class <%= camelize(interaction_name) %>
     include Hanami::Interactor
 
     def initialize(params = {})
